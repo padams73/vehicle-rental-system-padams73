@@ -1,5 +1,5 @@
 # vehicle management system for a rental company
-# vehicles have names, seats and availability
+# vehicles have names, seats and availability, renters
 
 class Vehicle:
 
