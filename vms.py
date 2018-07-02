@@ -58,7 +58,7 @@ def rent_vehicle():
         if v._seats >= seat_search and v._available ==True:
             v._display_info_available()
     
-    rent_out = input("Enter licence of vehicle to rent: ")
+    rent_out = input("Enter number of vehicle to rent: ")
     renter_name = input("Enter renter name:")
     counter = 0
     for v in vehicles:
@@ -67,9 +67,22 @@ def rent_vehicle():
             counter +=1
     if counter == 0:
         print("Licence plate incorrect. No vehicle rented")
+
+def return_vehicle():
+    return_name = input("Enter your name:") 
+    for v in vehicles:
+        if v._renter == return_name:
+            v._display_info_available()
+    return_licence = input("Enter licence number:")
+    for v in vehicles:
+        if v._renter == return_name and v._licence == return_licence:
+            v._return()
             
 
 rent_vehicle()
 for v in vehicles:
         
+    v._display_all()
+return_vehicle()
+for v in vehicles:
     v._display_all()
