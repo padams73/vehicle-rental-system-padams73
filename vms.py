@@ -78,7 +78,7 @@ def return_vehicle():
         if v._renter == return_name and v._licence == return_licence:
             v._return()
             
-
+# testing the program
 rent_vehicle()
 for v in vehicles:
         
