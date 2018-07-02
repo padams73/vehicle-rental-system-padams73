@@ -67,6 +67,7 @@ def rent_vehicle():
             counter +=1
     if counter == 0:
         print("Licence plate incorrect. No vehicle rented")
+    main_menu()
 
 def return_vehicle():
     return_name = input("Enter your name:") 
@@ -77,12 +78,30 @@ def return_vehicle():
     for v in vehicles:
         if v._renter == return_name and v._licence == return_licence:
             v._return()
-            
-# testing the program
-rent_vehicle()
-for v in vehicles:
-        
-    v._display_all()
-return_vehicle()
-for v in vehicles:
-    v._display_all()
+    main_menu()
+
+def main_menu():
+    print("Vehicle management system")
+    print("-------------------------")
+    print("1. View all vehicles")
+    print("2. Rent vehicle")
+    print("3. Return vehicle")
+    while True:
+        try:
+            selection = int(input("Choice:"))
+            if selection in range(1, 4):
+                break
+            else:
+                print("Enter valid number")
+        except:
+            print("Enter an integer")
+    if selection==1:
+        for v in vehicles:
+            v._display_all()
+        main_menu()
+    elif selection==2:
+        rent_vehicle()
+    else:
+        return_vehicle()
+
+main_menu()
