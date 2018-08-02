@@ -1,5 +1,6 @@
 # vehicle management system for a rental company
 # vehicles have names, seats availability and renters
+# testing commit comments
 
 class Vehicle:
 
